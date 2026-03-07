@@ -2,6 +2,8 @@
 
 这个目录提供 **纯 Cloudflare 可运行版**，来源于你给的可运行参考实现，并已经放进当前仓库中，作为独立子项目维护。
 
+> 部署完成后的实际使用方式，请看：`cloudflare-workers/USAGE.zh-CN.md`
+
 ## 目录说明
 
 - `cloudflare-workers/src`：Worker 主逻辑（TypeScript / Hono）
