@@ -1,0 +1,37 @@
+name = "grok2api-z-workers"
+main = "src/index.ts"
+compatibility_date = "2026-03-07"
+
+# Static assets (admin UI)
+assets = { directory = "./app/static", binding = "ASSETS" }
+
+# Hard-pin execution closer to the US to make egress locality more stable.
+[placement]
+region = "aws:us-east-1"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "grok2api-z"
+database_id = "2afd0c26-0e23-4f37-8adb-43406659e618"
+migrations_dir = "migrations"
+
+[[kv_namespaces]]
+binding = "KV_CACHE"
+id = "fb263f468a23408dae2a9e787b8449c5"
+
+[[migrations]]
+tag = "do-v1"
+new_sqlite_classes = ["AutoRegisterJob"]
+
+[[migrations]]
+tag = "do-v2"
+deleted_classes = ["AutoRegisterJob"]
+
+[vars]
+CACHE_RESET_TZ_OFFSET_MINUTES = "480"
+BUILD_SHA = "dev"
+KV_CACHE_MAX_BYTES = "26214400"
+KV_CLEANUP_BATCH = "200"
+
+[triggers]
+crons = ["0 16 * * *"]

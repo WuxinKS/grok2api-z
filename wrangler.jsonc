@@ -1,0 +1,104 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "grok2api-z",
+  "main": "cloudflare/worker.mjs",
+  "compatibility_date": "2026-03-07",
+  "workers_dev": true,
+  "containers": [
+    {
+      "class_name": "Grok2ApiContainer",
+      "image": "./Dockerfile",
+      "max_instances": 3
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "GROK2API_CONTAINER",
+        "class_name": "Grok2ApiContainer"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "Grok2ApiContainer"
+      ]
+    }
+  ],
+  "vars": {
+    "CONTAINER_PORT": "8000",
+    "CONTAINER_IDLE_TIMEOUT": "10m",
+    "SERVER_HOST": "0.0.0.0",
+    "SERVER_PORT": "8000",
+    "SERVER_WORKERS": "1",
+    "LOG_LEVEL": "INFO",
+    "LOG_FILE_ENABLED": "false",
+    "DATA_DIR": "/tmp/data",
+    "SERVER_STORAGE_TYPE": "local",
+    "SERVER_STORAGE_URL": ""
+  },
+  "env": {
+    "staging": {
+      "name": "grok2api-z-staging",
+      "containers": [
+        {
+          "class_name": "Grok2ApiContainer",
+          "image": "./Dockerfile",
+          "max_instances": 2
+        }
+      ],
+      "durable_objects": {
+        "bindings": [
+          {
+            "name": "GROK2API_CONTAINER",
+            "class_name": "Grok2ApiContainer"
+          }
+        ]
+      },
+      "vars": {
+        "CONTAINER_PORT": "8000",
+        "CONTAINER_IDLE_TIMEOUT": "10m",
+        "SERVER_HOST": "0.0.0.0",
+        "SERVER_PORT": "8000",
+        "SERVER_WORKERS": "1",
+        "LOG_LEVEL": "DEBUG",
+        "LOG_FILE_ENABLED": "false",
+        "DATA_DIR": "/tmp/data",
+        "SERVER_STORAGE_TYPE": "redis",
+        "SERVER_STORAGE_URL": "redis://<staging-redis-url>"
+      }
+    },
+    "production": {
+      "name": "grok2api-z-production",
+      "containers": [
+        {
+          "class_name": "Grok2ApiContainer",
+          "image": "./Dockerfile",
+          "max_instances": 3
+        }
+      ],
+      "durable_objects": {
+        "bindings": [
+          {
+            "name": "GROK2API_CONTAINER",
+            "class_name": "Grok2ApiContainer"
+          }
+        ]
+      },
+      "vars": {
+        "CONTAINER_PORT": "8000",
+        "CONTAINER_IDLE_TIMEOUT": "10m",
+        "SERVER_HOST": "0.0.0.0",
+        "SERVER_PORT": "8000",
+        "SERVER_WORKERS": "1",
+        "LOG_LEVEL": "INFO",
+        "LOG_FILE_ENABLED": "false",
+        "DATA_DIR": "/tmp/data",
+        "SERVER_STORAGE_TYPE": "redis",
+        "SERVER_STORAGE_URL": "redis://<production-redis-url>"
+      }
+    }
+  }
+}

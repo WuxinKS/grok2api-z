@@ -1,6 +1,12 @@
 # Grok2API
 
+[![Deploy to Cloudflare Containers](https://img.shields.io/badge/Deploy-Cloudflare%20Containers-F38020?logo=cloudflare&logoColor=white)](./cloudflare/README.md)
+
 **中文** | [English](docs/README.en.md) | [文档](https://blog.cheny.me/blog/posts/grok2api)
+
+> Cloudflare 方案现在有两条：
+> - **生产部署版（推荐保留现有 Python 服务能力）**：根目录 `cloudflare/` + `wrangler.jsonc`，基于 **Cloudflare Containers**
+> - **纯 Cloudflare 版（无 Python 运行时）**：`cloudflare-workers/`，基于 **Workers + D1 + KV**
 
 > [!NOTE]
 > 本项目仅供学习与研究，使用者必须在遵循 Grok 的 **使用条款** 以及 **法律法规** 的情况下使用，不得用于非法用途。

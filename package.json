@@ -1,0 +1,14 @@
+{
+  "name": "grok2api-cloudflare",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cf:deploy": "wrangler deploy",
+    "cf:dev": "wrangler dev",
+    "cf:containers:list": "wrangler containers list"
+  },
+  "devDependencies": {
+    "@cloudflare/containers": "^0.0.22",
+    "wrangler": "^4.0.0"
+  }
+}
