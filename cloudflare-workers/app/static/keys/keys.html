@@ -9,8 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css" rel="stylesheet">
-  <link href="/static/common/common.css?v=3" rel="stylesheet">
-  <link href="/static/keys/keys.css?v=3" rel="stylesheet">
+  <link href="/static/common/common.css?v=4" rel="stylesheet">
+  <link href="/static/keys/keys.css?v=4" rel="stylesheet">
   <link href="/static/common/toast.css" rel="stylesheet">
 </head>
 
@@ -76,7 +76,7 @@
           </div>
         </div>
 
-        <div class="keys-toolbar">
+        <div class="keys-toolbar section-toolbar">
           <div class="keys-toolbar-left">
             <input type="text" id="keys-search" class="geist-input" placeholder="搜索名称或 Key..." oninput="onKeyFilterChange()">
             <select id="keys-status-filter" class="geist-input" onchange="onKeyFilterChange()">
@@ -104,6 +104,8 @@
           <div class="keys-table-tip">移动端支持横向滚动查看详细配额</div>
         </div>
 
+        <div class="table-scroll-hint">宽表格支持左右滑动，便于查看额度与已用数据。</div>
+
         <div class="table-card-frame">
           <div class="table-card-scroller">
             <table class="geist-table min-w-[1000px]">
@@ -121,8 +123,14 @@
               <tbody id="keys-table-body"></tbody>
             </table>
           </div>
-          <div id="loading" class="loading-state-panel">加载中...</div>
-          <div id="empty-state" class="empty-state-panel hidden">暂无 API Key，请点击右上角新增。</div>
+          <div id="loading" class="loading-state-panel">
+            <strong>API Key 数据加载中</strong>
+            <span>正在同步 Key 列表、状态与每日额度…</span>
+          </div>
+          <div id="empty-state" class="empty-state-panel hidden">
+            <strong>暂无 API Key</strong>
+            <span>点击右上角“新增 Key”开始创建访问凭据。</span>
+          </div>
         </div>
       </div>
     </section>

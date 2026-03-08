@@ -9,8 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css" rel="stylesheet">
-  <link href="/static/common/common.css?v=3" rel="stylesheet">
-  <link href="/static/cache/cache.css?v=5" rel="stylesheet">
+  <link href="/static/common/common.css?v=4" rel="stylesheet">
+  <link href="/static/cache/cache.css?v=6" rel="stylesheet">
   <link href="/static/common/toast.css" rel="stylesheet">
 </head>
 
@@ -124,6 +124,8 @@
           <div class="cache-workspace-chip">批量操作</div>
         </div>
 
+        <div class="table-scroll-hint">列表较宽时可左右滑动查看文件、大小、时间与操作列。</div>
+
         <div class="cache-panel-stack">
           <div id="local-cache-lists" class="cache-lists hidden">
             <div id="local-image-list" class="cache-list hidden">
@@ -206,7 +208,10 @@
                   <tbody id="account-table-body"></tbody>
                 </table>
               </div>
-              <div id="account-empty" class="empty-state-panel hidden">暂无可用账号</div>
+              <div id="account-empty" class="empty-state-panel hidden">
+                <strong>暂无可用账号</strong>
+                <span>请切换到本地缓存视图，或等待在线资产账号数据同步。</span>
+              </div>
             </div>
           </div>
         </div>

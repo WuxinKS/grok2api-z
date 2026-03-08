@@ -1,5 +1,6 @@
 .cache-page-shell {
   padding-top: 14px;
+  padding-bottom: 120px;
 }
 
 .cache-page-hero {
@@ -57,7 +58,12 @@
 
 .cache-card.selected {
   border-color: rgba(79, 70, 229, 0.28);
+  transform: translateY(-2px);
   box-shadow: 0 22px 44px rgba(79, 70, 229, 0.12);
+}
+
+.cache-card:active {
+  transform: translateY(0);
 }
 
 .cache-card-kicker {
@@ -311,11 +317,24 @@
 
 #batch-actions {
   max-width: calc(100vw - 32px);
+  min-height: 58px;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.82);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.9));
   box-shadow: 0 24px 54px rgba(15, 23, 42, 0.16);
   backdrop-filter: blur(18px);
+}
+
+#batch-actions::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 44px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.38);
+  transform: translateX(-50%);
 }
 
 .cache-selection-count {
@@ -343,6 +362,7 @@
 @media (max-width: 768px) {
   .cache-page-shell {
     padding-top: 10px;
+    padding-bottom: 172px;
   }
 
   .cache-hero-pills {

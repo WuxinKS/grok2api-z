@@ -9,8 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css" rel="stylesheet">
-  <link href="/static/common/common.css?v=3" rel="stylesheet">
-  <link href="/static/token/token.css?v=12" rel="stylesheet">
+  <link href="/static/common/common.css?v=4" rel="stylesheet">
+  <link href="/static/token/token.css?v=13" rel="stylesheet">
   <link href="/static/common/toast.css" rel="stylesheet">
 </head>
 
@@ -126,7 +126,7 @@
           <div class="inline-chip">多条件过滤</div>
         </div>
 
-        <div id="token-filter-bar" class="token-filter-bar">
+        <div id="token-filter-bar" class="token-filter-bar section-toolbar">
           <div class="filter-group token-filter-group">
             <span class="token-filter-label">类型</span>
             <label class="filter-chip">
@@ -173,6 +173,8 @@
           <div class="token-table-tip">当前视图支持批量勾选操作</div>
         </div>
 
+        <div class="table-scroll-hint">表格较宽时可左右滑动查看完整列与操作。</div>
+
         <div class="table-card-frame">
           <div class="table-card-scroller">
             <table class="geist-table min-w-[800px]">
@@ -190,8 +192,14 @@
               <tbody id="token-table-body"></tbody>
             </table>
           </div>
-          <div id="loading" class="loading-state-panel">加载中...</div>
-          <div id="empty-state" class="empty-state-panel hidden">暂无 Token，请点击右上角导入或添加。</div>
+          <div id="loading" class="loading-state-panel">
+            <strong>Token 数据加载中</strong>
+            <span>正在同步 Token 池、状态和额度统计…</span>
+          </div>
+          <div id="empty-state" class="empty-state-panel hidden">
+            <strong>暂无 Token</strong>
+            <span>点击右上角“导入”或“添加”继续管理。</span>
+          </div>
         </div>
       </div>
     </section>

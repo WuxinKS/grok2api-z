@@ -10,9 +10,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css" rel="stylesheet">
-  <link href="/static/common/common.css?v=3" rel="stylesheet">
+  <link href="/static/common/common.css?v=4" rel="stylesheet">
   <link href="/static/common/toast.css" rel="stylesheet">
-  <link href="/static/datacenter/datacenter.css?v=3" rel="stylesheet">
+  <link href="/static/datacenter/datacenter.css?v=4" rel="stylesheet">
 </head>
 
 <body class="min-h-screen flex flex-col datacenter-page" style="background-color: var(--bg);">
@@ -161,6 +161,7 @@
             <button id="log-refresh" class="geist-button-outline text-xs px-3">刷新</button>
           </div>
         </div>
+        <div class="section-helper-text">日志面板为独立滚动容器，筛选与刷新仅优化前端阅读反馈，不改变原有读取行为。</div>
         <div class="log-panel">
           <pre id="log-content" class="log-content">加载中...</pre>
         </div>

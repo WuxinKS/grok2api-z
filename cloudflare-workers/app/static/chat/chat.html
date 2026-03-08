@@ -9,8 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css" rel="stylesheet">
-  <link href="/static/common/common.css?v=3" rel="stylesheet">
-  <link href="/static/chat/chat.css?v=5" rel="stylesheet">
+  <link href="/static/common/common.css?v=4" rel="stylesheet">
+  <link href="/static/chat/chat.css?v=6" rel="stylesheet">
   <link href="/static/common/toast.css" rel="stylesheet">
 </head>
 
@@ -100,6 +100,8 @@
           <button id="tab-image" class="tab" onclick="switchTab('image')">生图</button>
           <button id="tab-video" class="tab" onclick="switchTab('video')">生成视频</button>
         </div>
+
+        <div class="section-helper-text">输入区、结果区与瀑布流均保留当前 ID 和逻辑，仅增强滚动容器、提示文案与移动端操作手感。</div>
 
         <div id="panel-chat" class="panel">
           <div class="chat-panel-shell">

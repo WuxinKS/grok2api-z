@@ -24,8 +24,8 @@
       }
     }
   </script>
-  <link href="/static/common/common.css?v=3" rel="stylesheet">
-  <link href="/static/login/login.css?v=3" rel="stylesheet">
+  <link href="/static/common/common.css?v=4" rel="stylesheet">
+  <link href="/static/login/login.css?v=4" rel="stylesheet">
   <link href="/static/common/toast.css" rel="stylesheet">
 </head>
 
@@ -76,6 +76,10 @@
         <div class="login-panel-badge">安全登录</div>
         <h1 class="login-panel-title">欢迎回来</h1>
         <p class="login-panel-subtitle">请输入账户名和密码以继续使用管理后台。</p>
+        <div class="login-panel-meta" aria-hidden="true">
+          <span class="login-panel-chip">自动校验已登录状态</span>
+          <span class="login-panel-chip">支持回车快速提交</span>
+        </div>
 
         <div class="login-form">
           <label class="login-field">
@@ -90,8 +94,8 @@
               class="geist-input login-input">
           </label>
 
-          <button onclick="login()" class="geist-button login-button">登录</button>
-          <div class="login-help">将优先读取已存储账户信息，并自动校验当前登录状态。</div>
+          <button onclick="login()" id="login-button" class="geist-button login-button">登录</button>
+          <div id="login-help" class="login-help">将优先读取已存储账户信息，并自动校验当前登录状态。</div>
         </div>
       </section>
     </div>
@@ -102,8 +106,7 @@
   <script src="/static/common/admin-auth.js?v=3"></script>
   <script src="/static/common/toast.js"></script>
   <script src="/static/common/footer.js?v=1"></script>
-  <script src="/static/login/login.js?v=2"></script>
+  <script src="/static/login/login.js?v=3"></script>
 </body>
 
 </html>
-
