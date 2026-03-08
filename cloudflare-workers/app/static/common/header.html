@@ -1,24 +1,31 @@
-<nav class="app-nav bg-[var(--bg)]/80 backdrop-blur-md fixed top-0 left-0 right-0 z-10">
-  <div class="app-nav-inner max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-    <div class="nav-left flex items-center gap-6">
-      <div class="flex flex-col gap-0.5 leading-tight">
-        <div class="flex items-center gap-2">
-          <a href="https://github.com/WuxinKS/grok2api-z" target="_blank" rel="noopener"
-            class="brand-link font-semibold tracking-tight hover:text-black">
-            <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.69-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.11-1.48-1.11-1.48-.91-.64.07-.63.07-.63 1.01.07 1.54 1.06 1.54 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.79c.85 0 1.7.12 2.5.36 1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.58 5.06.36.32.68.95.68 1.92 0 1.38-.01 2.49-.01 2.83 0 .26.18.58.69.48A10.05 10.05 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
-            </svg>
-            <span>Grok2API</span>
-          </a>
-          <a href="https://github.com/TQZHR" target="_blank" rel="noopener"
-            class="text-xs text-[var(--accents-4)] hover:text-black">@TQZHR</a>
+<nav class="app-nav fixed top-0 left-0 right-0 z-10">
+  <div class="nav-shell">
+    <div class="app-nav-inner">
+      <div class="nav-left">
+        <div class="nav-brand-stack">
+          <div class="nav-brand-row">
+            <a href="https://github.com/WuxinKS/grok2api-z" target="_blank" rel="noopener"
+              class="brand-link nav-brand-main">
+              <span class="nav-brand-mark" aria-hidden="true">
+                <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.69-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.11-1.48-1.11-1.48-.91-.64.07-.63.07-.63 1.01.07 1.54 1.06 1.54 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.79c.85 0 1.7.12 2.5.36 1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.58 5.06.36.32.68.95.68 1.92 0 1.38-.01 2.49-.01 2.83 0 .26.18.58.69.48A10.05 10.05 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+                </svg>
+              </span>
+              <span class="nav-brand-title">Grok2API</span>
+            </a>
+            <span class="nav-badge">Cloudflare Workers</span>
+          </div>
+          <div class="nav-brand-meta">
+            <a href="https://github.com/TQZHR" target="_blank" rel="noopener" class="nav-support-link">@TQZHR</a>
+            <span class="nav-meta-dot" aria-hidden="true"></span>
+            <a href="https://github.com/WuxinKS/grok2api-z" target="_blank" rel="noopener"
+              class="nav-support-link">原作者仓库 @chenyme</a>
+          </div>
         </div>
-        <a href="https://github.com/WuxinKS/grok2api-z" target="_blank" rel="noopener"
-          class="text-xs text-[var(--accents-4)] hover:text-black">原作者仓库 @chenyme</a>
       </div>
-      <div class="nav-divider h-4 w-px bg-[var(--border)]"></div>
-      <div class="nav-desktop-links flex items-center gap-6">
+
+      <div class="nav-desktop-links" aria-label="管理导航">
         <a href="/admin/token" class="nav-link text-sm" data-nav="/admin/token">Token 管理</a>
         <a href="/admin/keys" class="nav-link text-sm" data-nav="/admin/keys">API Key 管理</a>
         <a href="/admin/chat" class="nav-link text-sm" data-nav="/admin/chat">在线聊天</a>
@@ -26,29 +33,36 @@
         <a href="/admin/config" class="nav-link text-sm" data-nav="/admin/config">配置管理</a>
         <a href="/admin/cache" class="nav-link text-sm" data-nav="/admin/cache">缓存管理</a>
       </div>
-    </div>
-    <div class="nav-actions nav-desktop-actions">
-      <button id="storage-mode-btn" type="button" class="nav-action-btn" title="存储模式">-</button>
-      <a href="https://github.com/WuxinKS/grok2api-z/issues" target="_blank" rel="noopener"
-        class="nav-action-btn">反馈</a>
-      <button onclick="logout()" type="button" class="nav-action-btn">退出</button>
-    </div>
 
-    <button id="mobile-nav-toggle" type="button" class="mobile-nav-toggle" aria-label="打开导航菜单"
-      aria-controls="mobile-nav-drawer" aria-expanded="false">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </button>
+      <div class="nav-actions nav-desktop-actions">
+        <button id="storage-mode-btn" type="button" class="nav-action-btn" title="存储模式">-</button>
+        <a href="https://github.com/WuxinKS/grok2api-z/issues" target="_blank" rel="noopener"
+          class="nav-action-btn">反馈</a>
+        <button onclick="logout()" type="button" class="nav-action-btn">退出</button>
+      </div>
+
+      <button id="mobile-nav-toggle" type="button" class="mobile-nav-toggle" aria-label="打开导航菜单"
+        aria-controls="mobile-nav-drawer" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
   </div>
 
   <div id="mobile-nav-overlay" class="mobile-nav-overlay hidden" aria-hidden="true"></div>
   <aside id="mobile-nav-drawer" class="mobile-nav-drawer hidden" aria-hidden="true">
     <div class="mobile-nav-header">
-      <div class="text-sm font-semibold tracking-tight">管理菜单</div>
+      <div class="mobile-nav-copy">
+        <div class="mobile-nav-title-row">
+          <div class="mobile-nav-title">Grok2API</div>
+          <span class="nav-badge">管理菜单</span>
+        </div>
+        <div class="mobile-nav-subtitle">Token、Key 与运行状态控制台</div>
+      </div>
       <button id="mobile-nav-close" type="button" class="mobile-nav-close" aria-label="关闭导航菜单">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
