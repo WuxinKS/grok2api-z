@@ -1,57 +1,180 @@
-.card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 14px 14px 12px;
+.datacenter-page-shell {
+  padding-top: 14px;
 }
 
-.card-title {
+.datacenter-page-hero {
+  background: linear-gradient(135deg, rgba(67, 56, 202, 0.96) 0%, rgba(37, 99, 235, 0.94) 54%, rgba(20, 184, 166, 0.9) 100%);
+}
+
+.datacenter-hero-copy {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+}
+
+.datacenter-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.datacenter-hero-pill,
+.datacenter-chart-tip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
   font-size: 12px;
-  color: var(--accents-4);
-  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.chart-wrap {
-  position: relative;
-  width: 100%;
-  height: 260px;
+.datacenter-hero-pill {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.datacenter-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .dc-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+}
+
+.dc-toggle .checkbox {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.datacenter-overview-shell,
+.datacenter-chart-shell,
+.datacenter-log-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.datacenter-stats-grid {
+  gap: 14px;
+}
+
+.datacenter-stat-card {
+  min-height: 132px;
+}
+
+.datacenter-stat-kicker {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accents-3);
+  margin-bottom: 2px;
+}
+
+.datacenter-chart-tip {
+  background: rgba(241, 245, 249, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  color: var(--accents-5);
+}
+
+.datacenter-chart-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92));
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.06);
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accents-5);
+  margin-bottom: 12px;
+}
+
+.chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+
+.datacenter-log-heading {
+  align-items: flex-start;
+}
+
+.log-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .log-panel {
-  background: #0b0d10;
-  border: 1px solid #1c2026;
-  border-radius: 12px;
+  background: linear-gradient(180deg, #0f172a 0%, #0b1220 100%);
+  border: 1px solid rgba(30, 41, 59, 0.94);
+  border-radius: 22px;
   overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 48px rgba(15, 23, 42, 0.18);
 }
 
 .log-content {
   margin: 0;
-  padding: 12px 12px;
-  max-height: 420px;
+  padding: 16px;
+  max-height: 440px;
   overflow: auto;
-  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 12px;
-  line-height: 1.45;
+  line-height: 1.58;
   color: #d8dee9;
   white-space: pre;
 }
 
 @media (max-width: 768px) {
+  .datacenter-page-shell {
+    padding-top: 10px;
+  }
+
+  .datacenter-hero-pills {
+    gap: 8px;
+  }
+
+  .datacenter-hero-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
   .datacenter-controls {
     width: 100%;
     justify-content: space-between;
-    flex-wrap: wrap;
+  }
+
+  .datacenter-controls .geist-button-outline,
+  .dc-toggle {
+    flex: 1 1 180px;
+    justify-content: center;
   }
 
   .chart-wrap {
-    height: 200px;
+    height: 220px;
   }
 
   .log-toolbar {
@@ -70,4 +193,3 @@
     max-height: 320px;
   }
 }
-

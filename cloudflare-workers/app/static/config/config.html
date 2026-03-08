@@ -10,40 +10,91 @@
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css" rel="stylesheet">
   <link href="/static/common/common.css?v=3" rel="stylesheet">
-  <link href="/static/config/config.css?v=4" rel="stylesheet">
+  <link href="/static/config/config.css?v=5" rel="stylesheet">
   <link href="/static/common/toast.css" rel="stylesheet">
 </head>
 
-<body class="min-h-screen flex flex-col" style="background-color: var(--bg);">
-
+<body class="min-h-screen flex flex-col config-page" style="background-color: var(--bg);">
   <div id="app-header"></div>
 
-  <main class="space-y-6 flex-1 container mx-auto max-w-4xl px-6 py-8 fade-in">
-    <div class="space-y-6">
-      <div class="flex flex-wrap justify-between items-start gap-3">
-        <div>
-          <h2 class="text-2xl font-semibold tracking-tight">配置管理</h2>
-          <p class="text-[var(--accents-4)] mt-1 text-sm">管理 API 密钥及系统参数设置。</p>
+  <main class="page-shell config-page-shell space-y-6 flex-1 py-6 fade-in">
+    <section class="page-hero config-page-hero">
+      <div class="page-hero-content">
+        <div class="config-hero-copy">
+          <span class="page-eyebrow">Cloudflare Workers · System Settings</span>
+          <h1 class="page-title">配置管理</h1>
+          <p class="page-subtitle">集中维护 API 密钥、Token 池、缓存策略与自动化参数，保留现有动态渲染、敏感字段复制与保存工作流。</p>
+          <div class="config-hero-pills" aria-hidden="true">
+            <span class="config-hero-pill">动态配置渲染</span>
+            <span class="config-hero-pill">敏感字段复制</span>
+            <span class="config-hero-pill">分组化参数编辑</span>
+          </div>
         </div>
-        <button onclick="saveConfig()" id="save-btn" class="geist-button gap-2 config-save-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
-            <polyline points="17 21 17 13 7 13 7 21" />
-            <polyline points="7 3 7 8 15 8" />
-          </svg>
-          保存
-        </button>
+
+        <div class="page-hero-actions">
+          <button onclick="saveConfig()" id="save-btn" class="geist-button gap-2 config-save-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+              <polyline points="17 21 17 13 7 13 7 21" />
+              <polyline points="7 3 7 8 15 8" />
+            </svg>
+            保存
+          </button>
+        </div>
       </div>
+    </section>
 
-      <div class="h-px bg-[var(--border)] my-6"></div>
+    <section class="surface-card">
+      <div class="surface-card-inner config-overview-shell">
+        <div class="section-heading">
+          <div>
+            <div class="section-title">配置分层</div>
+            <p class="section-subtitle">围绕服务访问、安全、缓存、并发与自动注册能力组织参数，帮助更快定位目标字段。</p>
+          </div>
+          <div class="inline-chip">实时编辑</div>
+        </div>
 
-      <div id="config-container" class="space-y-8">
-        <div class="text-center py-12 text-[var(--accents-4)]">加载中...</div>
+        <div class="config-overview-grid">
+          <div class="stat-card config-overview-card">
+            <div class="config-overview-kicker">Security</div>
+            <div class="stat-value">敏感字段</div>
+            <div class="stat-label">API Key、后台密码与 Cloudflare 凭据保留安全输入与复制入口。</div>
+          </div>
+          <div class="stat-card config-overview-card">
+            <div class="config-overview-kicker">Runtime</div>
+            <div class="stat-value">运行参数</div>
+            <div class="stat-label">超时、重试、刷新频率与并发上限继续沿用现有数据模型。</div>
+          </div>
+          <div class="stat-card config-overview-card">
+            <div class="config-overview-kicker">Automation</div>
+            <div class="stat-value">自动化流程</div>
+            <div class="stat-label">缓存回收、自动注册与 Worker 协同项以更清晰的卡片层级呈现。</div>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <section class="surface-card">
+      <div class="surface-card-inner config-shell">
+        <div class="section-heading">
+          <div>
+            <div class="section-title">系统参数</div>
+            <p class="section-subtitle">所有表单控件继续由现有脚本注入与保存，仅升级布局密度、卡片边界、层次与移动端可读性。</p>
+          </div>
+          <div class="config-hint-chip">保存后立即生效</div>
+        </div>
+
+        <div id="config-container" class="config-sections">
+          <div class="loading-state-panel">
+            <strong>配置加载中</strong>
+            <span>正在获取当前系统参数…</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <div id="app-footer"></div>
 
   <script src="/static/common/admin-auth.js?v=3"></script>
